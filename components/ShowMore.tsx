@@ -5,13 +5,14 @@ import { useRouter } from "next/navigation";
 import { CustomButton } from ".";
 import { updateSearchParams } from "@/utils";
 
-const ShowMore = ({ pageNumber, isNext} : ShowMoreProps) => {
-    const router = useRouter();
+const ShowMore = ({ pageNumber, isNext, setLimit} : ShowMoreProps) => {
+    // const router = useRouter();
 
     const handleNavigation = () =>{
         const newLimit = (pageNumber + 1) * 10;     //increasing the page limit
-        const newPathName = updateSearchParams("limit",`${newLimit}`);    //upadting the limit to new limit
-        router.push(newPathName);
+        // const newPathName = updateSearchParams("limit",`${newLimit}`);    //upadting the limit to new limit
+        // router.push(newPathName);
+        setLimit(newLimit);
     }
   return (
     <div className="w-full flex-center gap-5 mt-10">

@@ -97,8 +97,9 @@ export default function Home() {
               )}
 
               <ShowMore
-                pageNumber={(searchParams.limit || 10)/10} //current page number
-                isNext={(searchParams.limit || 10) > allCars.length}
+                pageNumber={limit / 10} //current page number
+                isNext={limit > allCars.length}
+                setLimit={setLimit}
               />
             </section>
           ): (
